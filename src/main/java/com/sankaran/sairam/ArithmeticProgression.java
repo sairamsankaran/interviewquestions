@@ -38,16 +38,20 @@ public class ArithmeticProgression {
 			Boolean found = false;
 			int start = 0;
 			int end = 1;
-			while (!found) {
-				commonDifference = progressionArray[end] - progressionArray[start] - commonDifference;
-				start++;
-				end++;
-				if(commonDifference == 0){
-					commonDifference = progressionArray[end] - progressionArray[start];
-					found = true;
-				}
-			}
-			System.out.println(commonDifference);
+			commonDifference = 2;
+//			while (!found) {
+//				commonDifference = progressionArray[end] - progressionArray[start] - commonDifference;
+//				if(commonDifference == 0){
+//					commonDifference = progressionArray[end] - progressionArray[start];
+//					found = true;
+//				}
+//				start++;
+//				end++;
+//			}
+			System.out.println("Common difference = " + commonDifference);
+			
+			int missing = missingNumber(progressionArray, commonDifference, 0, progressionArray.length-1);
+			System.out.println(missing);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -58,5 +62,32 @@ public class ArithmeticProgression {
 				arrayScanner.close();
 			}
 		}
+	}
+	
+	public static int missingNumber(int [] arithmeticProgression, int commonDifference, int first, int last) {
+		if (last - first == 2) {
+			if ((arithmeticProgression[last] - arithmeticProgression[last-1]) == (arithmeticProgression[last-1] - arithmeticProgression[first])) {
+				System.out.println("No missing numbers");
+				return -1;
+			} else {
+				if ((arithmeticProgression[last-1] - arithmeticProgression[first]) != commonDifference) {
+					return arithmeticProgression[first] + commonDifference;
+				} else {
+					return arithmeticProgression[last] - commonDifference;
+				}
+			}
+		}
+		
+		int mid = midpoint(first, last);
+		
+		if(arithmeticProgression[mid] == (arithmeticProgression[0] + commonDifference*mid)) {
+			return missingNumber(arithmeticProgression, commonDifference, mid, last);
+		} else {
+			return missingNumber(arithmeticProgression, commonDifference, first, mid);
+		}
+	}
+	
+	public static int midpoint(int first, int last) {
+		return (int)(first + (last - first)*0.5);
 	}
 }
