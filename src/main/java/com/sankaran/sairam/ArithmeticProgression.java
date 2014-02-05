@@ -64,6 +64,7 @@ public class ArithmeticProgression {
 		}
 	}
 	
+	// Once we know common difference use binary search to search for missing number
 	public static int missingNumber(int [] arithmeticProgression, int commonDifference, int first, int last) {
 		if (last - first == 2) {
 			if ((arithmeticProgression[last] - arithmeticProgression[last-1]) == (arithmeticProgression[last-1] - arithmeticProgression[first])) {
