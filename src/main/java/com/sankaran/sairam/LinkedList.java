@@ -92,6 +92,22 @@ public class LinkedList {
         this.head = prev;
     }
 
+    public static Node reverseRecursively(Node node, Node prev) {
+        if (node == null) { // empty list
+            return null;
+        }
+        if (node.getNext() == null) { // last node to process
+            node.setNext(prev);
+            return node; // new head
+        }
+        Node next = node.getNext();
+        node.setNext(prev);
+        node.setPrev(next);
+        prev = node;
+        Node head = reverseRecursively(next, prev);
+        return head; // new head
+    }
+
     public void print() {
         Node node = this.head;
         while (node != null) {
