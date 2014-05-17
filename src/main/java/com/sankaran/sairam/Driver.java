@@ -18,9 +18,11 @@ public class Driver {
         linkedList.deleteValue("3");
         linkedList.print(); System.out.println();
 
+        // delete from empty list
         linkedList.deleteValue("3");
         linkedList.print(); System.out.println();
 
+        // reverse empty list
         linkedList.reverse();
         linkedList.print(); System.out.println();
 
@@ -28,7 +30,13 @@ public class Driver {
         linkedList.addValue("2");
         linkedList.addValue("3");
         linkedList.print(); System.out.println();
+        // reverse iteratively
         linkedList.reverse();
+        linkedList.print(); System.out.println();
+        //reverse recursively
+        Node head = linkedList.getHead();
+        head = LinkedList.reverseRecursively(head, null);
+        linkedList.setHead(head);
         linkedList.print(); System.out.println();
     }
 }
