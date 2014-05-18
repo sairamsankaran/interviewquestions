@@ -24,7 +24,7 @@ public class LinkedList {
         this.head = head;
     }
 
-    public void addNode(Node node) {
+    public void insertNode(Node node) {
         // adds the new node as head
         if (this.head != null) {
             node.setNext(this.head);
@@ -44,7 +44,7 @@ public class LinkedList {
         }
     }
 
-    public void addKey(int key) {
+    public void insertKey(int key) {
         // adds the new key as head
         Node newNode = new Node(key);
         if (this.head != null) {

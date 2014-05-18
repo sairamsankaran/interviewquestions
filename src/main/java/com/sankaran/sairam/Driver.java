@@ -4,9 +4,9 @@ public class Driver {
     public static void main(String [] args) {
         LinkedList linkedList = new LinkedList();
 
-        linkedList.addKey(1);
-        linkedList.addKey(2);
-        linkedList.addKey(3);
+        linkedList.insertKey(1);
+        linkedList.insertKey(2);
+        linkedList.insertKey(3);
         linkedList.print(); System.out.println();
 
         linkedList.deleteKey(1);
@@ -29,9 +29,9 @@ public class Driver {
         linkedList.reverse();
         linkedList.print(); System.out.println();
 
-        linkedList.addKey(1);
-        linkedList.addKey(2);
-        linkedList.addKey(3);
+        linkedList.insertKey(1);
+        linkedList.insertKey(2);
+        linkedList.insertKey(3);
         linkedList.print(); System.out.println();
         // reverse iteratively
         linkedList.reverse();
@@ -62,5 +62,18 @@ public class Driver {
         for (int i = 0; i < nodeArray.length; i++) {
             System.out.print(nodeArray[i].getKey() + " ");
         }
+
+        System.out.println();
+
+        Stack stack = new Stack();
+        stack.print(); System.out.println();
+        //stack.pop(); // throws exception
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.print(); System.out.println();
+        System.out.println(stack.peek() + "\n");
+        stack.pop();
+        stack.print(); System.out.println();
     }
 }
