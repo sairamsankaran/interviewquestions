@@ -2,6 +2,7 @@ package com.sankaran.sairam;
 
 public class Driver {
     public static void main(String [] args) {
+        System.out.println("Linked List:");
         LinkedList linkedList = new LinkedList();
 
         linkedList.insertKey(1);
@@ -42,6 +43,7 @@ public class Driver {
         linkedList.setHead(head);
         linkedList.print(); System.out.println();
 
+        System.out.println("Max Heap:");
         int[] array = {1, 2, 3, 4, 5};
         Node[] nodeArray = new Node[array.length];
 
@@ -64,7 +66,7 @@ public class Driver {
         }
 
         System.out.println();
-
+        System.out.println("Stack:");
         Stack stack = new Stack();
         stack.print(); System.out.println();
         //stack.pop(); // throws exception
@@ -75,5 +77,21 @@ public class Driver {
         System.out.println(stack.peek() + "\n");
         stack.pop();
         stack.print(); System.out.println();
+
+        System.out.println("Queue:");
+        Node node = new Node(1);
+        Queue queue = new Queue();
+        queue.print(); System.out.println();
+        //System.out.println(queue.dequeue());
+        queue.enqueue(node);
+        queue.print(); System.out.println();
+        node = new Node(2);
+        queue.enqueue(node);
+        queue.print(); System.out.println();
+        node = new Node(3);
+        queue.enqueue(node);
+        queue.print(); System.out.println();
+        System.out.println(queue.dequeue().getKey());
+        queue.print(); System.out.println();
     }
 }
