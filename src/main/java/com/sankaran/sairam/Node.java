@@ -1,7 +1,8 @@
 package com.sankaran.sairam;
 
 public class Node {
-    private String value = null;
+    private int key;
+    // private String value = null; // not implementing this for now
     private Node next = null;
     private Node prev = null;
 
@@ -9,16 +10,16 @@ public class Node {
 
     }
 
-    public Node(String value) {
-        this.value = value;
+    public Node(int key) {
+        this.key = key;
     }
 
-    public String getValue() {
-        return value;
+    public int getKey() {
+        return key;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setKey(int key) {
+        this.key = key;
     }
 
     public Node getNext() {
