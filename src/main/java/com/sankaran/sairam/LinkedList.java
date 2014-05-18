@@ -11,8 +11,8 @@ public class LinkedList {
         this.head = head;
     }
 
-    public LinkedList(String value) {
-        Node head = new Node(value);
+    public LinkedList(int key) {
+        Node head = new Node(key);
         this.head = head;
     }
 
@@ -25,6 +25,7 @@ public class LinkedList {
     }
 
     public void addNode(Node node) {
+        // adds the new node as head
         if (this.head != null) {
             node.setNext(this.head);
             this.head.setPrev(node);
@@ -43,8 +44,9 @@ public class LinkedList {
         }
     }
 
-    public void addValue(String value) {
-        Node newNode = new Node(value);
+    public void addKey(int key) {
+        // adds the new key as head
+        Node newNode = new Node(key);
         if (this.head != null) {
             newNode.setNext(this.head);
             this.head.setPrev(newNode);
@@ -52,11 +54,11 @@ public class LinkedList {
         this.head = newNode;
     }
 
-    public void deleteValue(String value) {
-        Node node = search(value);
-        // if value found. We need to check here because,
-        // if not found it will return head or null
-        if (node != null && node.getValue().equals(value)){
+    public void deleteKey(int key) {
+        Node node = search(key);
+        // if key found. We need to check here because,
+        // if not found, node will be head or null
+        if (node != null && (node.getKey() == key)){
             if (node.getPrev() != null) {
                 node.getPrev().setNext(node.getNext());
             } else {
@@ -69,15 +71,16 @@ public class LinkedList {
 
     }
 
-    public Node search(String value) {
+    public Node search(int key) {
         Node node = this.head;
-        while (node != null && !node.getValue().equals(value)) {
+        while (node != null && (node.getKey() != key)) {
             node = node.getNext();
         }
         return node;
     }
 
     public void reverse() {
+        // by iteration
         Node node = this.head;
         Node prev = null;
         Node next = null;
@@ -92,7 +95,8 @@ public class LinkedList {
         this.head = prev;
     }
 
-    public static Node reverseRecursively(Node node, Node prev) {
+    public static Node reverse(Node node, Node prev) {
+        // by recursion
         if (node == null) { // empty list
             return null;
         }
@@ -104,14 +108,17 @@ public class LinkedList {
         node.setNext(prev);
         node.setPrev(next);
         prev = node;
-        Node head = reverseRecursively(next, prev);
+        Node head = reverse(next, prev);
         return head; // new head
     }
 
     public void print() {
         Node node = this.head;
         while (node != null) {
-            System.out.print(node.getValue() + " ");
+            System.out.print(node.getKey());
+            if (node.getNext() != null) {
+                System.out.print("->");
+            }
             node = node.getNext();
         }
     }
