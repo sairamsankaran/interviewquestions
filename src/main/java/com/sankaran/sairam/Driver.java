@@ -126,5 +126,11 @@ public class Driver {
 
         System.out.println("Tree minimum: " + bst.getMin().getKey());
         System.out.println("Tree maximum: " + bst.getMax().getKey());
+
+        if (bst.search(1) != null && bst.search(1).getKey() == 1) {
+            System.out.println("Found");
+        } else {
+            System.out.println("Not Found");
+        }
     }
 }
