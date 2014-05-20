@@ -78,6 +78,7 @@ public class Driver {
         stack.pop();
         stack.print(); System.out.println();
 
+        System.out.println();
         System.out.println("Queue:");
         Node node = new Node(1);
         Queue queue = new Queue();
@@ -93,5 +94,34 @@ public class Driver {
         queue.print(); System.out.println();
         System.out.println(queue.dequeue().getKey());
         queue.print(); System.out.println();
+
+        System.out.println();
+        System.out.println("BST:");
+        BST bst = new BST();
+        bst.inOderTraversal(null); System.out.println();
+        TreeNode treeNode = new TreeNode(4);
+        TreeNode treeRoot = treeNode;
+        bst.insertNode(treeNode);
+        bst.preOderTraversal(treeNode); System.out.println();
+        bst.inOderTraversal(treeNode); System.out.println();
+        bst.postOderTraversal(treeNode); System.out.println();
+
+        treeNode = new TreeNode(2);
+        bst.insertNode(treeNode);
+        bst.preOderTraversal(treeRoot); System.out.println();
+        bst.inOderTraversal(treeRoot); System.out.println();
+        bst.postOderTraversal(treeRoot); System.out.println();
+
+        treeNode = new TreeNode(5);
+        bst.insertNode(treeNode);
+        bst.preOderTraversal(treeRoot); System.out.println();
+        bst.inOderTraversal(treeRoot); System.out.println();
+        bst.postOderTraversal(treeRoot); System.out.println();
+
+        treeNode = new TreeNode(3);
+        bst.insertNode(treeNode);
+        bst.preOderTraversal(treeRoot); System.out.println();
+        bst.inOderTraversal(treeRoot); System.out.println();
+        bst.postOderTraversal(treeRoot); System.out.println();
     }
 }
