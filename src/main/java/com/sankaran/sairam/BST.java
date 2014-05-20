@@ -62,7 +62,16 @@ public class BST {
     }
 
     public TreeNode search(int key) {
-        return new TreeNode();
+        TreeNode node = new TreeNode(key);
+        TreeNode x = this.root;
+        while (x != null && (x.getKey() != node.getKey())) {
+            if (node.getKey() < x.getKey()) {
+                x = x.getLeft();
+            } else {
+                x = x.getRight();
+            }
+        }
+        return x; // if key not found, this could return root or null
     }
 
     public TreeNode getMin() {
