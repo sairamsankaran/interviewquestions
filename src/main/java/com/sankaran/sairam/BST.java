@@ -65,12 +65,20 @@ public class BST {
         return new TreeNode();
     }
 
-    public TreeNode min() {
-        return new TreeNode();
+    public TreeNode getMin() {
+        TreeNode x = this.root;
+        while (x.getLeft() != null) {
+            x = x.getLeft();
+        }
+        return x;
     }
 
-    public TreeNode max() {
-        return new TreeNode();
+    public TreeNode getMax() {
+        TreeNode x = this.root;
+        while (x.getRight() != null) {
+            x = x.getRight();
+        }
+        return x;
     }
 
     public TreeNode successor(TreeNode node) {

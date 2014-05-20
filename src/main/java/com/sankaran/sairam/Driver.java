@@ -123,5 +123,8 @@ public class Driver {
         bst.preOderTraversal(treeRoot); System.out.println();
         bst.inOderTraversal(treeRoot); System.out.println();
         bst.postOderTraversal(treeRoot); System.out.println();
+
+        System.out.println("Tree minimum: " + bst.getMin().getKey());
+        System.out.println("Tree maximum: " + bst.getMax().getKey());
     }
 }
