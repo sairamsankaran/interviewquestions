@@ -46,4 +46,12 @@ public class TreeNode {
     public void setParent(TreeNode parent) {
         this.parent = parent;
     }
+
+    public boolean equals(TreeNode node) {
+        if (this.key == node.getKey()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

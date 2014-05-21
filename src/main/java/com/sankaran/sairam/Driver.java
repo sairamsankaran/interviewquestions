@@ -99,27 +99,27 @@ public class Driver {
         System.out.println("BST:");
         BST bst = new BST();
         bst.inOderTraversal(null); System.out.println();
-        TreeNode treeNode = new TreeNode(4);
-        TreeNode treeRoot = treeNode;
-        bst.insertNode(treeNode);
-        bst.preOderTraversal(treeNode); System.out.println();
-        bst.inOderTraversal(treeNode); System.out.println();
-        bst.postOderTraversal(treeNode); System.out.println();
-
-        treeNode = new TreeNode(2);
-        bst.insertNode(treeNode);
+        TreeNode treeNode4 = new TreeNode(4);
+        TreeNode treeRoot = treeNode4;
+        bst.insertNode(treeNode4);
         bst.preOderTraversal(treeRoot); System.out.println();
         bst.inOderTraversal(treeRoot); System.out.println();
         bst.postOderTraversal(treeRoot); System.out.println();
 
-        treeNode = new TreeNode(5);
-        bst.insertNode(treeNode);
+        TreeNode treeNode2 = new TreeNode(2);
+        bst.insertNode(treeNode2);
         bst.preOderTraversal(treeRoot); System.out.println();
         bst.inOderTraversal(treeRoot); System.out.println();
         bst.postOderTraversal(treeRoot); System.out.println();
 
-        treeNode = new TreeNode(3);
-        bst.insertNode(treeNode);
+        TreeNode treeNode5 = new TreeNode(5);
+        bst.insertNode(treeNode5);
+        bst.preOderTraversal(treeRoot); System.out.println();
+        bst.inOderTraversal(treeRoot); System.out.println();
+        bst.postOderTraversal(treeRoot); System.out.println();
+
+        TreeNode treeNode3 = new TreeNode(3);
+        bst.insertNode(treeNode3);
         bst.preOderTraversal(treeRoot); System.out.println();
         bst.inOderTraversal(treeRoot); System.out.println();
         bst.postOderTraversal(treeRoot); System.out.println();
@@ -132,5 +132,23 @@ public class Driver {
         } else {
             System.out.println("Not Found");
         }
+
+        System.out.println("Successor of " + treeNode2.getKey() + " is: " + bst.successor(treeNode2).getKey());
+
+        bst.deleteNode(treeNode4);
+        System.out.println("Preorder");
+        bst.preOderTraversal(treeRoot); System.out.println();
+        System.out.println("Inorder");
+        bst.inOderTraversal(treeRoot); System.out.println();
+        System.out.println("Postorder");
+        bst.postOderTraversal(treeRoot); System.out.println();
+
+        bst.deleteNode(treeNode2);
+        System.out.println("Preorder");
+        bst.preOderTraversal(treeRoot); System.out.println();
+        System.out.println("Inorder");
+        bst.inOderTraversal(treeRoot); System.out.println();
+        System.out.println("Postorder");
+        bst.postOderTraversal(treeRoot); System.out.println();
     }
 }
