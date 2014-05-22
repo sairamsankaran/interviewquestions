@@ -150,5 +150,15 @@ public class Driver {
         bst.inOderTraversal(treeRoot); System.out.println();
         System.out.println("Postorder");
         bst.postOderTraversal(treeRoot); System.out.println();
+
+        System.out.println();
+        System.out.println("Dictionary:");
+        Dictionary dictionary = new Trie();
+        dictionary.add("cat");
+        dictionary.add("car");
+        dictionary.add("dog");
+        System.out.println("Dictionary contains cat: " + dictionary.contains("cat"));
+        System.out.println("Dictionary contains can: " + dictionary.contains("can"));
+        System.out.println("Dictionary contains cel: " + dictionary.contains("cel"));
     }
 }
