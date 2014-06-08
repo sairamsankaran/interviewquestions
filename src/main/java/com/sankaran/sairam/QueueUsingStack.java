@@ -5,7 +5,7 @@ public class QueueUsingStack {
     Stack outgoing = new Stack();
 
     public boolean isEmpty() {
-        return outgoing.isEmpty();
+        return (outgoing.isEmpty() && incoming.isEmpty());
     }
 
     public void enqueue(int i) {
