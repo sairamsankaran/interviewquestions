@@ -3,6 +3,7 @@ package com.sankaran.sairam;
 import java.util.NoSuchElementException;
 
 public class Stack {
+    private final int MAX_SIZE = 10;
     private int size = 0;
     private Node top;
 
@@ -14,13 +15,18 @@ public class Stack {
         return (size < 1);
     }
 
-    public void push(int i) {
+    public boolean push(int i) {
+        if (this.size + 1 > MAX_SIZE) {
+            System.out.println("Stack if full!");
+            return false;
+        }
         Node top = new Node(i);
         this.size = this.size + 1;
-        if (top != null) {
+        if (this.top != null) {
             top.setNext(this.top);
         }
         this.setTop(top);
+        return true;
     }
 
     public int pop() {

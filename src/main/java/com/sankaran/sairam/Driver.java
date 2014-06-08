@@ -33,6 +33,11 @@ public class Driver {
         linkedList.insertKey(1);
         linkedList.insertKey(2);
         linkedList.insertKey(3);
+        linkedList.insertKey(3);
+        linkedList.print(); System.out.println();
+        //remove duplicates
+        Node newHead = LinkedList.removeDuplicates(linkedList.getHead());
+        linkedList.setHead(newHead);
         linkedList.print(); System.out.println();
         // reverse iteratively
         linkedList.reverse();
@@ -42,6 +47,8 @@ public class Driver {
         head = LinkedList.reverse(head, null);
         linkedList.setHead(head);
         linkedList.print(); System.out.println();
+
+
 
         System.out.println("Max Heap:");
         int[] array = {1, 2, 3, 4, 5};
@@ -154,11 +161,32 @@ public class Driver {
         System.out.println();
         System.out.println("Dictionary:");
         Dictionary dictionary = new Trie();
-        dictionary.add("cat");
-        dictionary.add("car");
-        dictionary.add("dog");
+        dictionary.addWord("cat");
+        dictionary.addWord("car");
+        dictionary.addWord("dog");
         System.out.println("Dictionary contains cat: " + dictionary.contains("cat"));
         System.out.println("Dictionary contains can: " + dictionary.contains("can"));
         System.out.println("Dictionary contains cel: " + dictionary.contains("cel"));
+
+        System.out.println();
+        System.out.println("Quick Sort String:");
+        StringBuilder string = new StringBuilder("sairam".toLowerCase());
+        System.out.println("Sorted string of " + string.toString() + " is: " + QuickSort.sortString(string, 0, string.toString().length()-1));
+
+        System.out.println();
+        System.out.println("String Manipulations:");
+        Boolean result = StringMethods.isStringWithUniqueCharacters("iijkl");
+        System.out.println("result = " + result);
+        char[] name = {'s', 'a', 'i', 'r', 'a', 'm'};
+        StringMethods.removeDuplicates(name);
+        for (char c:name) {
+            System.out.print(c);
+        }
+        System.out.print('\n');
+        char[] fullName = {'s', 'a', 'i', 'r', 'a', 'm', ' ', 's', 'a', 'n', 'k', 'a', 'r', 'a', 'n'};
+        StringMethods.encode(fullName);
+        for (char c:StringMethods.encode(fullName)) {
+            System.out.print(c);
+        }
     }
 }

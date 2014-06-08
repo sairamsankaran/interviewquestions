@@ -112,6 +112,59 @@ public class LinkedList {
         return head; // new head
     }
 
+    public static Node removeDuplicates(Node head) {
+        if (head == null || head.getNext() == null) {
+            return head;
+        }
+        Node current = head;
+        Node runner;
+        Node duplicateNode;
+        Node next;
+        Node prev;
+        while (current != null) {
+            runner = head;
+            while (runner != current) {
+                if (runner.getKey() == current.getKey()) {
+                    // remove node
+                    duplicateNode = runner;
+                    next = duplicateNode.getNext();
+                    prev = duplicateNode.getPrev();
+                    if (prev != null) {
+                        prev.setNext(next);
+                    }
+                    next.setPrev(prev);
+                    if (duplicateNode == head) {
+                        head = next;
+                    }
+                }
+                runner = runner.getNext();
+            }
+            current = current.getNext();
+        }
+        return head;
+    }
+
+    public static Node nThToLast(Node head, int n) {
+        if (head == null && head.getNext() == null) {
+            return head;
+        }
+        if (n < 1) {
+            return head;
+        }
+        Node p1 = head;
+        Node p2 = head;
+        int counter = 0;
+        while (counter < n && p2 != null) {
+            p2 = p2.getNext();
+            counter++;
+        }
+        while (p2 != null) {
+            p1 = p1.getNext();
+            p2 = p2.getNext();
+        }
+        return p1;
+    }
+
     public void print() {
         Node node = this.head;
         while (node != null) {

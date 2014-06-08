@@ -11,7 +11,7 @@ public class Trie implements  Dictionary {
     }
 
     @Override
-    public boolean add(String word) {
+    public boolean addWord(String word) {
         return root.addWord(word);
     }
 

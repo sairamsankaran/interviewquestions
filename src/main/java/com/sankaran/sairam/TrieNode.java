@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TrieNode {
-    private char character;
-    private TrieNode[] children;
-    private TrieNode parent;
-    private boolean isLeaf;
-    private boolean isWord;
+    protected char character;
+    protected TrieNode[] children;
+    protected TrieNode parent;
+    protected boolean isLeaf;
+    protected boolean isWord;
 
     public TrieNode() {
         this.children = new TrieNode[26]; // 26 English consonants
