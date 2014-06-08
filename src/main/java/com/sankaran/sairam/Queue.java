@@ -7,17 +7,16 @@ public class Queue {
     Node tail;
 
     public boolean isEmpty() {
-        return (tail == null);
+        return (this.head == null);
     }
 
     public void enqueue(Node node) {
-        if (this.head == null) {
+        if (isEmpty()) {
             this.head = node;
-            this.tail = node;
         } else {
             this.tail.setNext(node);
-            this.tail = node;
         }
+        this.tail = node;
     }
 
     public Node dequeue() {
