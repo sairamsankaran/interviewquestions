@@ -2,22 +2,29 @@ package com.sankaran.sairam;
 
 public class LinkedList {
     private Node head = null;
+    private int size;
 
     public LinkedList() {
-
+        this.size = 0;
     }
 
     public LinkedList(Node head) {
         this.head = head;
+        this.size++;
     }
 
     public LinkedList(int key) {
         Node head = new Node(key);
         this.head = head;
+        this.size++;
     }
 
     public Node getHead() {
         return this.head;
+    }
+
+    public int getSize() {
+        return this.size;
     }
 
     public void setHead(Node head) {
@@ -31,6 +38,7 @@ public class LinkedList {
             this.head.setPrev(node);
         }
         this.head = node;
+        this.size++;
     }
 
     public void deleteNode(Node node) {
@@ -42,6 +50,7 @@ public class LinkedList {
         if (node.getNext() != null) {
             node.getNext().setPrev(node.getPrev());
         }
+        this.size--;
     }
 
     public void insertKey(int key) {
@@ -52,6 +61,7 @@ public class LinkedList {
             this.head.setPrev(newNode);
         }
         this.head = newNode;
+        this.size++;
     }
 
     public void deleteKey(int key) {
@@ -68,7 +78,7 @@ public class LinkedList {
                 node.getNext().setPrev(node.getPrev());
             }
         }
-
+        this.size--;
     }
 
     public Node search(int key) {

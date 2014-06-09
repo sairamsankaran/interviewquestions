@@ -1,5 +1,7 @@
 package com.sankaran.sairam;
 
+import java.util.ArrayList;
+
 public class BST {
     private TreeNode root = null;
 
@@ -30,13 +32,13 @@ public class BST {
         }
     }
 
-    public TreeNode deleteNode(TreeNode node) {
+    public TreeNode deleteNode(TreeNode z) {
         TreeNode y; // node to be spliced
         TreeNode x; // child of spliced node which gets orphaned
-        if ((node.getLeft() == null) || (node.getRight() == null)) {
-            y = node;
+        if ((z.getLeft() == null) || (z.getRight() == null)) {
+            y = z;
         } else {
-            y = successor(node);
+            y = successor(z);
         }
         if (y.getLeft() == null) {
             x = y.getRight();
@@ -55,8 +57,8 @@ public class BST {
                 y.getParent().setRight(x);
             }
         }
-        if (!y.equals(node)) { // spliced successor
-            node.setKey(y.getKey());
+        if (!y.equals(z)) { // spliced successor
+            z.setKey(y.getKey());
         }
         return y;
     }
@@ -137,6 +139,24 @@ public class BST {
 
     public void print() {
 
+    }
+
+    private int minDepthFromNode(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+        return (1 + Math.min(minDepthFromNode(node.getLeft()), minDepthFromNode(node.getRight())));
+    }
+
+    private int maxDepthFromNode(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+        return (1 + Math.max(maxDepthFromNode(node.getLeft()), maxDepthFromNode(node.getRight())));
+    }
+
+    public boolean isBalanced() {
+        return ((maxDepthFromNode(this.root) - minDepthFromNode(this.root)) <= 1);
     }
 
     private void printNode(TreeNode node) {
