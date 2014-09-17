@@ -1,7 +1,11 @@
 package com.sankaran.sairam;
 
+import com.sankaran.sairam.interviewcake.Stack;
+
 public class Driver {
     public static void main(String [] args) {
+
+        System.out.println("2 + 2 = " +2+2);
         System.out.println("Linked List:");
         LinkedList linkedList = new LinkedList();
 
@@ -22,7 +26,7 @@ public class Driver {
         linkedList.deleteKey(3);
         linkedList.print(); System.out.println();
 
-        // delete from empty list
+        // deleteOldestNode from empty list
         linkedList.deleteKey(3);
         linkedList.print(); System.out.println();
 
@@ -188,5 +192,10 @@ public class Driver {
         for (char c:StringMethods.encode(fullName)) {
             System.out.print(c);
         }
+
+        System.out.println("Remove spaces ...");
+        char[] input = {' ', ' ', ' ', 's','a', 'i', ' ', ' ', ' ', 'r','a','m', ' ', ' ', ' ', };
+        Utility.removeSpaces(input, input.length);
+        System.out.println();
     }
 }

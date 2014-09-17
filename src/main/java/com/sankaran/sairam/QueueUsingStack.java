@@ -1,5 +1,7 @@
 package com.sankaran.sairam;
 
+import com.sankaran.sairam.interviewcake.Stack;
+
 public class QueueUsingStack {
     Stack incoming = new Stack();
     Stack outgoing = new Stack();
